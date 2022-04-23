@@ -37,6 +37,25 @@ public class Easy_MajorityElement_169
 		System.out.println(ans);
 	}
 
+	
+//				Note :
+//					
+//				Here in this question we can use several methods .
+//				1] Brute Force Method O(n^2) , O(1)
+//				2] First Sort and then run one loop O(nlogn) + O(n) , O(1)
+//				3] Using Hashmap O(n) , O(n)
+//				4] Moore's Voting Algorithm O(n) , O(1)
+//			
+//				Here we used Moore's Voting Algorithm
+//				In which we take two variable first one for index=0 and second for count=1
+//				run one for from second element and check
+//				if(arr[i] == arr[index]) then count++ else count--
+//				also 
+//				if(count == 0) then index=i and count++
+//				At last return arr[index]
+//				Thats it ..Algorithm.
+	
+	
 	static int majority(int arr[])
 	{
 		int ele=0;
