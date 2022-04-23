@@ -36,8 +36,9 @@ public class Easy_IntersectionofTwoArrays_349 {
 //			In this we have two methods to solve question
 //			1] With Frequency method
 //			2] HashSet Method
+// 			3] HashMap Method
 //		
-//			HashSet Method is so effective in means of time complexity
+//			HashSet Method and HashMap Method is so effective in means of time complexity
 //			It is faster than frequency method
 	
 	
@@ -97,6 +98,31 @@ public class Easy_IntersectionofTwoArrays_349 {
 	       }
 	       
 	       return ans;
+	    }
+	
+	
+	public int[] intersection2(int[] nums1, int[] nums2) 
+	    {
+	       HashMap<Integer,Integer> tot = new HashMap<>();
+               HashMap<Integer,Integer> inter = new HashMap<>();
+        
+		for(int i = 0 ; i < nums1.length ; i++){
+		    tot.put(nums1[i],1);
+		}
+        
+		for(int i = 0 ; i < nums2.length ; i++){
+		    if(tot.containsKey(nums2[i])){
+			inter.put(nums2[i],1);
+		    }
+		}
+        
+		int[] result = new int[inter.size()];
+		int i = 0 ;
+		for(int ele : inter.keySet()){
+          	  result[i++] = ele;
+       		 }
+        
+      		  return result;
 	    }
   
 	    private int[] getFreq(int arr[])
