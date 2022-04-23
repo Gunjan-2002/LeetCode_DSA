@@ -47,6 +47,17 @@ public class Easy_MissingNumber_268
 		System.out.println(ans);
 	}
 	
+// 	Note :
+	
+// 	Here in this question array elements are from 0 to n so first
+// 	thing should come in our mind must be use of Cyclic Sort .
+	
+// 	So by using cyclic sort first we will sort and then run a loop
+// 	for checking the element which is not present at its correct index.
+// 	if not present at correct index we will return it
+// 	at last we will return array.length .
+// 	That's it
+	
 	static int missingNumber(int[] arr) 
 	{
 		int i=0;
