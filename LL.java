@@ -186,6 +186,25 @@ public class LL
 	
 //	83. Remove Duplicates from Sorted List
 	
+/*
+	Given the head of a sorted linked list, delete all duplicates such that each element
+	appears only once. Return the linked list sorted as well.
+
+	Example 1:
+	Input: head = [1,1,2]
+	Output: [1,2]
+
+	Example 2:
+	Input: head = [1,1,2,3,3]
+	Output: [1,2,3]
+
+	Constraints:
+
+	    The number of nodes in the list is in the range [0, 300].
+	    -100 <= Node.val <= 100
+	    The list is guaranteed to be sorted in ascending order.
+*/
+	
 	public Node duplicate(Node head)
 	{
 		Node node = head;
@@ -208,6 +227,35 @@ public class LL
 //	 ********************************************************************************************************************************
 
 //	21. Merge Two Sorted Lists
+	
+/*
+	You are given the heads of two sorted linked lists list1 and list2.
+
+	Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+	Return the head of the merged linked list.
+
+
+
+	Example 1:
+	Input: list1 = [1,2,4], list2 = [1,3,4]
+	Output: [1,1,2,3,4,4]
+
+	Example 2:
+	Input: list1 = [], list2 = []
+	Output: []
+
+	Example 3:
+	Input: list1 = [], list2 = [0]
+	Output: [0]
+
+	Constraints:
+
+	    The number of nodes in both lists is in the range [0, 50].
+	    -100 <= Node.val <= 100
+	    Both list1 and list2 are sorted in non-decreasing order.
+
+*/
 	
 	public static LL mergeSorted(LL l1 , LL l2)
 	{
@@ -262,6 +310,7 @@ public class LL
 				
 		Apply logic : If there is cycle then there must be a condition when these two pointer
 				      will become equal.
+*/
 	
 		public boolean hasCycle(ListNode head) {
 	        ListNode slow=head;
@@ -280,7 +329,7 @@ public class LL
 	        
 	        return false;
 	    }	
-*/
+
 	
 	
 //	 ********************************************************************************************************************************
@@ -325,12 +374,42 @@ public class LL
 	
 /*
 
+Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return null.
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to (0-indexed). It is -1 if there is no cycle. Note that pos is not passed as a parameter.
+
+Do not modify the linked list.
+
+Example 1:
+Input: head = [3,2,0,-4], pos = 1
+Output: tail connects to node index 1
+Explanation: There is a cycle in the linked list, where tail connects to the second node.
+
+Example 2:
+Input: head = [1,2], pos = 0
+Output: tail connects to node index 0
+Explanation: There is a cycle in the linked list, where tail connects to the first node.
+
+Example 3:
+Input: head = [1], pos = -1
+Output: no cycle
+Explanation: There is no cycle in the linked list.
+
+Constraints:
+
+    The number of the nodes in the list is in the range [0, 104].
+    -105 <= Node.val <= 105
+    pos is -1 or a valid index in the linked-list.
+
+Follow up: Can you solve it using O(1) (i.e. constant) memory?
+
+    Notes --
     1] FIND THE LENGTH OF CYCLE
     2] MOVE THE FIRST POINTER LENGTH NUMBER OF TIMES
     3] MOVE BOTH FIRST AND SECOND POINTER UNTIL FIRST & SECOND BECOME EQUAL
     4] RETURN FIRST OR SECOND
 
-	
+*/	
 	 public ListNode detectCycle(ListNode head) 
 	    {
 	        int length=0;
@@ -380,7 +459,7 @@ public class LL
 	        
 	        return s;
 	    }
-*/
+
 
 	
 //	 ********************************************************************************************************************************
@@ -388,6 +467,35 @@ public class LL
 //	202. Happy Number
 	
 /*	
+
+Write an algorithm to determine if a number n is happy.
+
+A happy number is a number defined by the following process:
+
+    Starting with any positive integer, replace the number by the sum of the squares of its digits.
+    Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+    Those numbers for which this process ends in 1 are happy.
+
+Return true if n is a happy number, and false if not.
+
+Example 1:
+Input: n = 19
+Output: true
+Explanation:
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+
+Example 2:
+Input: n = 2
+Output: false
+
+Constraints:
+
+    1 <= n <= 231 - 1
+
+
 
     HERE WE APPLIED THE LOGIC OF FAST AND SLOW POINTER FROM THE LINKED LIST
     WHILE SOLVING THIS EXAMPLE IF THE NUMBER IS NOT HAPPY THEN THERE IS CYCLE
@@ -397,9 +505,9 @@ public class LL
     SO WE TAKE TWO POINTER FAST AND SLOW SLOW WILL MOVE ONE STEP AND FAST WILL
     MOVE TWO STEPS AND THE WHILE LOOP WILL RUN UPTO WHICH FAST IS NOT EQUAL TO 
     SLOW . AFTER LOOP IS EXECUTED THEN WE WILL CHECK IF SLOW IS EQUAL TO ONE THEN
-    RERURN TRUE ELSE RETURN FALSE.
+    RETURN TRUE ELSE RETURN FALSE.
     
-	
+ */	
     public boolean isHappy(int n) 
     {
         int slow=n;
@@ -433,7 +541,6 @@ public class LL
         return ans;
     }
     
- */
 	
 	
 //	 ********************************************************************************************************************************
@@ -441,6 +548,29 @@ public class LL
 //	876. Middle of the Linked List
 	
 /*
+
+Given the head of a singly linked list, return the middle node of the linked list.
+
+If there are two middle nodes, return the second middle node.
+
+
+Example 1:
+Input: head = [1,2,3,4,5]
+Output: [3,4,5]
+Explanation: The middle node of the list is node 3.
+
+Example 2:
+Input: head = [1,2,3,4,5,6]
+Output: [4,5,6]
+Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
+
+Constraints:
+
+    The number of nodes in the list is in the range [1, 100].
+    1 <= Node.val <= 100
+
+    
+ */
  
  	public ListNode middleNode(ListNode head) 
     {
@@ -474,8 +604,7 @@ public class LL
         return mid;
     }
     
-    
- */
+
 	
 	
 //	 ********************************************************************************************************************************
@@ -484,6 +613,29 @@ public class LL
 	
 /*
  
+Given the head of a linked list, return the list after sorting it in ascending order. 
+
+Example 1:
+Input: head = [4,2,1,3]
+Output: [1,2,3,4]
+
+Example 2:
+Input: head = [-1,5,3,4,0]
+Output: [-1,0,3,4,5]
+
+Example 3:
+Input: head = []
+Output: []
+
+Constraints:
+
+    The number of nodes in the list is in the range [0, 5 * 104].
+    -105 <= Node.val <= 105
+
+Follow up: Can you sort the linked list in O(n logn) time and O(1) memory (i.e. constant space)?
+
+ */
+
  	public ListNode sortList(ListNode head) 
     {
         if(head == null || head.next == null)
@@ -554,13 +706,36 @@ public class LL
         return l.next;
     }
  
- */
+
 	
 //	 ********************************************************************************************************************************
 	
 //	206. Reverse Linked List
 	
 /*
+
+Given the head of a singly linked list, reverse the list, and return the reversed list.
+
+Example 1:
+Input: head = [1,2,3,4,5]
+Output: [5,4,3,2,1]
+
+Example 2:
+Input: head = [1,2]
+Output: [2,1]
+
+Example 3:
+Input: head = []
+Output: []
+
+Constraints:
+
+    The number of nodes in the list is the range [0, 5000].
+    -5000 <= Node.val <= 5000
+
+Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
+
+
  * 
  * 	HERE WE USE TWO POINTER'S APPROACH
  * 		WE TAKE TWO POINTERS CURR ONE POINTS TOWARDS HEAD 
@@ -574,6 +749,9 @@ public class LL
  * 		NODE IN A GLOBAL DECLARED NEW NODE AND AT LAST WE RETURN THAT GLOBAL NODE
  * 	THAT'S IT .
  * 				THANK YOU !
+ 
+ 
+*/
  
  	public ListNode reverseList(ListNode head) 
  	{
@@ -632,7 +810,6 @@ public class LL
         return newHead;
     }
  	 	
-*/
 	
 	
 //	 ********************************************************************************************************************************
@@ -640,6 +817,26 @@ public class LL
 //	234. Palindrome Linked List
 	
 /*
+
+Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
+
+Example 1:
+Input: head = [1,2,2,1]
+Output: true
+
+Example 2:
+Input: head = [1,2]
+Output: false
+
+Constraints:
+
+    The number of nodes in the list is in the range [1, 105].
+    0 <= Node.val <= 9
+
+Follow up: Could you do it in O(n) time and O(1) space?
+
+
+
  * 
  * NOTE :
  * 		HERE WE FIRST FIND THE MID NODE
@@ -652,7 +849,7 @@ public class LL
  * 		ELSE
  * 			RETURN FALSE;
  
- 
+*/
 
 	public boolean isPalindrome(ListNode head) 
     {
@@ -712,7 +909,6 @@ public class LL
         return newHead;
     }
   
-*/
 	
 	
 //	 ********************************************************************************************************************************
@@ -720,6 +916,32 @@ public class LL
 //	143. Reorder List
 	
 /*
+
+You are given the head of a singly linked-list. The list can be represented as:
+
+L0 → L1 → … → Ln - 1 → Ln
+
+Reorder the list to be on the following form:
+
+L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
+
+You may not modify the values in the list's nodes. Only nodes themselves may be changed.
+
+Example 1:
+Input: head = [1,2,3,4]
+Output: [1,4,2,3]
+
+Example 2:
+Input: head = [1,2,3,4,5]
+Output: [1,5,2,4,3]
+
+Constraints:
+
+    The number of nodes in the list is in the range [1, 5 * 104].
+    1 <= Node.val <= 1000
+ 
+*/
+
 	public void reorderList(ListNode head) 
     {
        if(head==null || head.next==null)
@@ -780,8 +1002,7 @@ public class LL
         
         return newHead;
     }
- 
-*/
+
 	
 	
 //	 ********************************************************************************************************************************
@@ -790,6 +1011,24 @@ public class LL
 	
 /*
 
+Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.
+
+Example 1:
+Input: head = [1,2,3,4,5], left = 2, right = 4
+Output: [1,4,3,2,5]
+
+Example 2:
+Input: head = [5], left = 1, right = 1
+Output: [5]
+
+Constraints:
+
+    The number of nodes in the list is n.
+    1 <= n <= 500
+    -500 <= Node.val <= 500
+    1 <= left <= right <= n
+
+Follow up: Could you do it in one pass?
 
 * HERE WE USED THREE POINTERS TO REVERSE THE SUBLIST
 * FIRST WE TAKE ONE POINTER NODEBEFORESUBLIST WHICH POINTS TO NULL INITIALLY
@@ -808,8 +1047,9 @@ public class LL
 * END WHILE LOOP
 * AT LAST WE RETURN DUMMY HEAD WHICH WE CREATED AT THE BEGINNIG
 
-
- 	 public ListNode reverseBetween(ListNode head, int left, int right) 
+*/
+	
+    public ListNode reverseBetween(ListNode head, int left, int right) 
     {
         if(head==null || left==right)
         {
@@ -842,7 +1082,7 @@ public class LL
         
     }
     
-*/
+
 	
 	
 //	 ********************************************************************************************************************************
@@ -850,6 +1090,30 @@ public class LL
 //	25. Reverse Nodes in k-Group
 	
 /*
+
+Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list.
+
+k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.
+
+You may not alter the values in the list's nodes, only nodes themselves may be changed.
+
+Example 1:
+Input: head = [1,2,3,4,5], k = 2
+Output: [2,1,4,3,5]
+
+Example 2:
+Input: head = [1,2,3,4,5], k = 3
+Output: [3,2,1,4,5]
+
+Constraints:
+
+    The number of nodes in the list is n.
+    1 <= k <= n <= 5000
+    0 <= Node.val <= 1000
+
+ 
+Follow-up: Can you solve the problem in O(1) extra memory space?
+
  * HERE ALSO WE TAKE THREE POINTER PRE CURR NEXT
  * FIRST OF ALL WE CHECK THAT IF HEAD==NULL OR K==1 IF YES
  * THEN RETURN HEAD
@@ -874,6 +1138,8 @@ public class LL
  * WHILE LOOP ENDS
  * AT LAST RETURN DUMMY.NEXT I.E ORIGINAL HEAD OF LINKEDLIST
 
+*/
+	
  public ListNode reverseKGroup(ListNode head, int k) 
     {
         if(head==null || k==1)
@@ -919,15 +1185,13 @@ public class LL
         
         return count;
     }
- 
-*/
+
 	
 	
 //	 ********************************************************************************************************************************
 
 //	25. Reverse Alternate Nodes in k-Group
-	
-/*
+
 
   public ListNode reverseKGroup(ListNode head, int k) 
     {
@@ -985,7 +1249,7 @@ public class LL
         
         return count;
     }
-*/
+	
 	
 	
 //	 ********************************************************************************************************************************
@@ -1048,7 +1312,8 @@ It is guaranteed that the list represents a number that does not have leading ze
  * Now move curr1 and curr2 to next pointer but check if curr1 and curr2 is equal to
  * null or not if null then assign nul to curr1 or curr2 respectively.
  
-  
+*/
+	  
 	class Solution {
 	    public ListNode addTwoNumbers(ListNode l1, ListNode l2) 
 	    {
@@ -1080,8 +1345,7 @@ It is guaranteed that the list represents a number that does not have leading ze
 	    }
 	}
 	
-*/
-	
+
 	
 //	 ********************************************************************************************************************************
 
@@ -1135,6 +1399,8 @@ It is guaranteed that the list represents a number that does not have leading ze
   * If by chance carry is not equal to zero or greater than 0 then add carry to new Listnode
   * and write temp.next = result and result = temp;
 
+*/
+	
 	class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) 
     {
@@ -1200,7 +1466,6 @@ It is guaranteed that the list represents a number that does not have leading ze
     }
 }
  
-*/
 	
 	
 //	 ********************************************************************************************************************************
@@ -1245,7 +1510,8 @@ The number of nodes in the list is in the range [0, 500].
  * 
  * then return dummy.next
 
-
+*/
+	
  class Solution {
     public ListNode rotateRight(ListNode head, int k) 
     {
@@ -1282,8 +1548,7 @@ The number of nodes in the list is in the range [0, 500].
     }   
 }
  
-*/
-	
+
 	
 //	 ********************************************************************************************************************************
 
@@ -1326,7 +1591,8 @@ The number of nodes in the list is in the range [0, 200].
   *  
   * At last we will return left.next
 
-	
+*/
+		
 	class Solution {
     public ListNode partition(ListNode head, int x) 
     {
@@ -1359,8 +1625,6 @@ The number of nodes in the list is in the range [0, 200].
     }
 }
 
-*/
-	
 	
 	
 //	 ********************************************************************************************************************************
