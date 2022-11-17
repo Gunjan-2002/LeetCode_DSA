@@ -1205,15 +1205,166 @@ It is guaranteed that the list represents a number that does not have leading ze
 	
 //	 ********************************************************************************************************************************
 
+//	61. Rotate List
+	
+/*
+
+Given the head of a linked list, rotate the list to the right by k places.
+
+Example 1:
+Input: head = [1,2,3,4,5], k = 2
+Output: [4,5,1,2,3]
+ 
+Example 2:
+Input: head = [0,1,2], k = 4
+Output: [2,0,1]
+ 
+Constraints:
+The number of nodes in the list is in the range [0, 500].
+-100 <= Node.val <= 100
+0 <= k <= 2 * 109
+
+
+ * Notes --
+ * 
+ * In this question we have to rotate the list by k positions to right side
+ * 
+ * So first of all we will take two pointer which points to just one position behind the head i.e
+ * we will take a new node dummy which points to one position before head
+ * and then we assign that dummy.next equal to head
+ * Then take two nodes lastpointer which points to last node of original linkedlist and newLastPointer
+ * which points to new Last pointer after rotation of list by k points.
+ * 
+ * Formula = size - k % size  , This formula is used to find the new last node after rotation of list
+ * 
+ * after getting last node and new last node we will do some interchange means
+ * 
+ * change lastnode.next = dummy.next[head]
+ * then dummy.next[head] = newlastnode.next
+ * then newlastnode.next = null
+ * 
+ * then return dummy.next
+
+
+ class Solution {
+    public ListNode rotateRight(ListNode head, int k) 
+    {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode temp = dummy;
+        
+        if(head == null || head.next == null )
+        {
+            return head;
+        }
+        
+        ListNode lastPointer = dummy;
+        ListNode newLastPointer = dummy;
+        
+        int size=0;
+        
+        while(lastPointer.next != null)
+        {
+            lastPointer = lastPointer.next;
+            size++;
+        }
+        
+        for(int j = size - k % size ; j>0 ; j--)
+        {
+            newLastPointer = newLastPointer.next;
+        }
+        
+        lastPointer.next = dummy.next;
+        dummy.next = newLastPointer.next;
+        newLastPointer.next = null;
+        
+        return dummy.next;
+    }   
+}
+ 
+*/
+	
+	
+//	 ********************************************************************************************************************************
+
+//	86. Partition List
+	
+/*
+
+Given the head of a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
+
+You should preserve the original relative order of the nodes in each of the two partitions.
+
+Example 1:
+Input: head = [1,4,3,2,5,2], x = 3
+Output: [1,2,2,4,3,5]
+
+Example 2:
+Input: head = [2,1], x = 2
+Output: [1,2]
+ 
+Constraints:
+The number of nodes in the list is in the range [0, 200].
+-100 <= Node.val <= 100
+-200 <= x <= 200 
+ 
+
+  * Notes --
+  * 
+  * This question was simple to solve but i was thinking totally diffrent means
+  * I was thinking that we take two pointer then if second pointer.val is small
+  * then swap with first pointer if large then just increment pointers and bla bla bla
+  * But that solution was wrong
+  * 
+  * Then i get this solution from discussion box 
+  * In this solution we have to make two linked list first link list will contain all the nodes which
+  * value is strictly smaller than given x value and second link list will contain all the values which
+  * are equal to or greater than given x value this way we create two link list small and large
+  * 
+  * After this we will assign leftTail.next as right.next
+  * and rightTail.next as null
+  *  
+  * At last we will return left.next
+
+	
+	class Solution {
+    public ListNode partition(ListNode head, int x) 
+    {
+        ListNode left = new ListNode(0);
+        ListNode right = new ListNode(0);
+        
+        ListNode leftTail = left;
+        ListNode rightTail = right;
+        
+        while(head != null)
+        {
+            if(head.val < x)
+            {
+                leftTail.next = head;
+                leftTail = leftTail.next;
+            }
+            else
+            {
+                rightTail.next = head;
+                rightTail = rightTail.next;
+            }
+            
+            head = head.next;
+        }
+        
+        leftTail.next = right.next;
+        rightTail.next = null;
+            
+            return left.next;
+    }
+}
+
+*/
 	
 	
 	
-	
-	
-	
-	
-	
-	
+//	 ********************************************************************************************************************************
+
 	
 	
 	
