@@ -182,28 +182,9 @@ public class LL
 	}
 	
 	
-//	 ********************************************************************************************************************************
+/*	 ********************************************************************************************************************************
 	
-//	83. Remove Duplicates from Sorted List
-	
-/*
-	Given the head of a sorted linked list, delete all duplicates such that each element
-	appears only once. Return the linked list sorted as well.
-
-	Example 1:
-	Input: head = [1,1,2]
-	Output: [1,2]
-
-	Example 2:
-	Input: head = [1,1,2,3,3]
-	Output: [1,2,3]
-
-	Constraints:
-
-	    The number of nodes in the list is in the range [0, 300].
-	    -100 <= Node.val <= 100
-	    The list is guaranteed to be sorted in ascending order.
-*/
+	83. Remove Duplicates from Sorted List
 	
 	public Node duplicate(Node head)
 	{
@@ -224,38 +205,9 @@ public class LL
 	}
 	
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
-//	21. Merge Two Sorted Lists
-	
-/*
-	You are given the heads of two sorted linked lists list1 and list2.
-
-	Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
-
-	Return the head of the merged linked list.
-
-
-
-	Example 1:
-	Input: list1 = [1,2,4], list2 = [1,3,4]
-	Output: [1,1,2,3,4,4]
-
-	Example 2:
-	Input: list1 = [], list2 = []
-	Output: []
-
-	Example 3:
-	Input: list1 = [], list2 = [0]
-	Output: [0]
-
-	Constraints:
-
-	    The number of nodes in both lists is in the range [0, 50].
-	    -100 <= Node.val <= 100
-	    Both list1 and list2 are sorted in non-decreasing order.
-
-*/
+	21. Merge Two Sorted Lists
 	
 	public static LL mergeSorted(LL l1 , LL l2)
 	{
@@ -294,11 +246,11 @@ public class LL
 	}
 	
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
 //	 141. Linked List Cycle
 	
-/*
+
 	    Note :
 		
 		Whenever question has term Find CYCLE irrespective of data structure
@@ -310,7 +262,6 @@ public class LL
 				
 		Apply logic : If there is cycle then there must be a condition when these two pointer
 				      will become equal.
-*/
 	
 		public boolean hasCycle(ListNode head) {
 	        ListNode slow=head;
@@ -332,11 +283,10 @@ public class LL
 
 	
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
-//	To find Length of Cycle in a Linked List
+	To find Length of Cycle in a Linked List
 
-/*
 
 	public int hasCycle(ListNode head) {
         ListNode slow=head;
@@ -365,51 +315,19 @@ public class LL
         return 0;
     }	
 
-*/
 	
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
-//	142. Linked List Cycle II
+	142. Linked List Cycle II
 	
-/*
 
-Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return null.
-
-There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to (0-indexed). It is -1 if there is no cycle. Note that pos is not passed as a parameter.
-
-Do not modify the linked list.
-
-Example 1:
-Input: head = [3,2,0,-4], pos = 1
-Output: tail connects to node index 1
-Explanation: There is a cycle in the linked list, where tail connects to the second node.
-
-Example 2:
-Input: head = [1,2], pos = 0
-Output: tail connects to node index 0
-Explanation: There is a cycle in the linked list, where tail connects to the first node.
-
-Example 3:
-Input: head = [1], pos = -1
-Output: no cycle
-Explanation: There is no cycle in the linked list.
-
-Constraints:
-
-    The number of the nodes in the list is in the range [0, 104].
-    -105 <= Node.val <= 105
-    pos is -1 or a valid index in the linked-list.
-
-Follow up: Can you solve it using O(1) (i.e. constant) memory?
-
-    Notes --
     1] FIND THE LENGTH OF CYCLE
     2] MOVE THE FIRST POINTER LENGTH NUMBER OF TIMES
     3] MOVE BOTH FIRST AND SECOND POINTER UNTIL FIRST & SECOND BECOME EQUAL
     4] RETURN FIRST OR SECOND
 
-*/	
+	
 	 public ListNode detectCycle(ListNode head) 
 	    {
 	        int length=0;
@@ -460,42 +378,11 @@ Follow up: Can you solve it using O(1) (i.e. constant) memory?
 	        return s;
 	    }
 
-
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
-//	202. Happy Number
-	
-/*	
-
-Write an algorithm to determine if a number n is happy.
-
-A happy number is a number defined by the following process:
-
-    Starting with any positive integer, replace the number by the sum of the squares of its digits.
-    Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
-    Those numbers for which this process ends in 1 are happy.
-
-Return true if n is a happy number, and false if not.
-
-Example 1:
-Input: n = 19
-Output: true
-Explanation:
-12 + 92 = 82
-82 + 22 = 68
-62 + 82 = 100
-12 + 02 + 02 = 1
-
-Example 2:
-Input: n = 2
-Output: false
-
-Constraints:
-
-    1 <= n <= 231 - 1
-
-
+	202. Happy Number
+		
 
     HERE WE APPLIED THE LOGIC OF FAST AND SLOW POINTER FROM THE LINKED LIST
     WHILE SOLVING THIS EXAMPLE IF THE NUMBER IS NOT HAPPY THEN THERE IS CYCLE
@@ -505,9 +392,9 @@ Constraints:
     SO WE TAKE TWO POINTER FAST AND SLOW SLOW WILL MOVE ONE STEP AND FAST WILL
     MOVE TWO STEPS AND THE WHILE LOOP WILL RUN UPTO WHICH FAST IS NOT EQUAL TO 
     SLOW . AFTER LOOP IS EXECUTED THEN WE WILL CHECK IF SLOW IS EQUAL TO ONE THEN
-    RETURN TRUE ELSE RETURN FALSE.
+    RERURN TRUE ELSE RETURN FALSE.
     
- */	
+	
     public boolean isHappy(int n) 
     {
         int slow=n;
@@ -543,34 +430,10 @@ Constraints:
     
 	
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
-//	876. Middle of the Linked List
+	876. Middle of the Linked List
 	
-/*
-
-Given the head of a singly linked list, return the middle node of the linked list.
-
-If there are two middle nodes, return the second middle node.
-
-
-Example 1:
-Input: head = [1,2,3,4,5]
-Output: [3,4,5]
-Explanation: The middle node of the list is node 3.
-
-Example 2:
-Input: head = [1,2,3,4,5,6]
-Output: [4,5,6]
-Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
-
-Constraints:
-
-    The number of nodes in the list is in the range [1, 100].
-    1 <= Node.val <= 100
-
-    
- */
  
  	public ListNode middleNode(ListNode head) 
     {
@@ -604,38 +467,12 @@ Constraints:
         return mid;
     }
     
+	
+	
+	 ********************************************************************************************************************************
 
-	
-	
-//	 ********************************************************************************************************************************
-
-//	148. Sort List
-	
-/*
+	148. Sort List
  
-Given the head of a linked list, return the list after sorting it in ascending order. 
-
-Example 1:
-Input: head = [4,2,1,3]
-Output: [1,2,3,4]
-
-Example 2:
-Input: head = [-1,5,3,4,0]
-Output: [-1,0,3,4,5]
-
-Example 3:
-Input: head = []
-Output: []
-
-Constraints:
-
-    The number of nodes in the list is in the range [0, 5 * 104].
-    -105 <= Node.val <= 105
-
-Follow up: Can you sort the linked list in O(n logn) time and O(1) memory (i.e. constant space)?
-
- */
-
  	public ListNode sortList(ListNode head) 
     {
         if(head == null || head.next == null)
@@ -706,36 +543,12 @@ Follow up: Can you sort the linked list in O(n logn) time and O(1) memory (i.e. 
         return l.next;
     }
  
-
+ 
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 	
-//	206. Reverse Linked List
+	206. Reverse Linked List
 	
-/*
-
-Given the head of a singly linked list, reverse the list, and return the reversed list.
-
-Example 1:
-Input: head = [1,2,3,4,5]
-Output: [5,4,3,2,1]
-
-Example 2:
-Input: head = [1,2]
-Output: [2,1]
-
-Example 3:
-Input: head = []
-Output: []
-
-Constraints:
-
-    The number of nodes in the list is the range [0, 5000].
-    -5000 <= Node.val <= 5000
-
-Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
-
-
  * 
  * 	HERE WE USE TWO POINTER'S APPROACH
  * 		WE TAKE TWO POINTERS CURR ONE POINTS TOWARDS HEAD 
@@ -750,30 +563,7 @@ Follow up: A linked list can be reversed either iteratively or recursively. Coul
  * 	THAT'S IT .
  * 				THANK YOU !
  
- 
-*/
- 
- 	public ListNode reverseList(ListNode head) 
- 	{
-        ListNode lastHead=head;
-        
-        ListNode curr=head;
-        ListNode pre=null;
-        
-        while(curr != null)
-        {
-            if(curr.next == null)
-            {
-                lastHead=curr;
-            }
-            ListNode next=curr.next;
-            curr.next=pre;
-            pre=curr;
-            curr=next;
-        }
-        
-        return lastHead;
-    }
+ 	 
     
      public ListNode reverseList(ListNode head) 
     {        
@@ -812,31 +602,10 @@ Follow up: A linked list can be reversed either iteratively or recursively. Coul
  	 	
 	
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
-//	234. Palindrome Linked List
+	234. Palindrome Linked List
 	
-/*
-
-Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
-
-Example 1:
-Input: head = [1,2,2,1]
-Output: true
-
-Example 2:
-Input: head = [1,2]
-Output: false
-
-Constraints:
-
-    The number of nodes in the list is in the range [1, 105].
-    0 <= Node.val <= 9
-
-Follow up: Could you do it in O(n) time and O(1) space?
-
-
-
  * 
  * NOTE :
  * 		HERE WE FIRST FIND THE MID NODE
@@ -849,7 +618,7 @@ Follow up: Could you do it in O(n) time and O(1) space?
  * 		ELSE
  * 			RETURN FALSE;
  
-*/
+ 
 
 	public boolean isPalindrome(ListNode head) 
     {
@@ -911,36 +680,10 @@ Follow up: Could you do it in O(n) time and O(1) space?
   
 	
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
-//	143. Reorder List
+	143. Reorder List
 	
-/*
-
-You are given the head of a singly linked-list. The list can be represented as:
-
-L0 → L1 → … → Ln - 1 → Ln
-
-Reorder the list to be on the following form:
-
-L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
-
-You may not modify the values in the list's nodes. Only nodes themselves may be changed.
-
-Example 1:
-Input: head = [1,2,3,4]
-Output: [1,4,2,3]
-
-Example 2:
-Input: head = [1,2,3,4,5]
-Output: [1,5,2,4,3]
-
-Constraints:
-
-    The number of nodes in the list is in the range [1, 5 * 104].
-    1 <= Node.val <= 1000
- 
-*/
 
 	public void reorderList(ListNode head) 
     {
@@ -1002,33 +745,14 @@ Constraints:
         
         return newHead;
     }
-
+ 
 	
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
-//	92. Reverse Linked List II
+	92. Reverse Linked List II
 	
-/*
 
-Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.
-
-Example 1:
-Input: head = [1,2,3,4,5], left = 2, right = 4
-Output: [1,4,3,2,5]
-
-Example 2:
-Input: head = [5], left = 1, right = 1
-Output: [5]
-
-Constraints:
-
-    The number of nodes in the list is n.
-    1 <= n <= 500
-    -500 <= Node.val <= 500
-    1 <= left <= right <= n
-
-Follow up: Could you do it in one pass?
 
 * HERE WE USED THREE POINTERS TO REVERSE THE SUBLIST
 * FIRST WE TAKE ONE POINTER NODEBEFORESUBLIST WHICH POINTS TO NULL INITIALLY
@@ -1047,9 +771,8 @@ Follow up: Could you do it in one pass?
 * END WHILE LOOP
 * AT LAST WE RETURN DUMMY HEAD WHICH WE CREATED AT THE BEGINNIG
 
-*/
-	
-    public ListNode reverseBetween(ListNode head, int left, int right) 
+
+ 	 public ListNode reverseBetween(ListNode head, int left, int right) 
     {
         if(head==null || left==right)
         {
@@ -1082,37 +805,12 @@ Follow up: Could you do it in one pass?
         
     }
     
-
 	
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
-//	25. Reverse Nodes in k-Group
+	25. Reverse Nodes in k-Group
 	
-/*
-
-Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list.
-
-k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.
-
-You may not alter the values in the list's nodes, only nodes themselves may be changed.
-
-Example 1:
-Input: head = [1,2,3,4,5], k = 2
-Output: [2,1,4,3,5]
-
-Example 2:
-Input: head = [1,2,3,4,5], k = 3
-Output: [3,2,1,4,5]
-
-Constraints:
-
-    The number of nodes in the list is n.
-    1 <= k <= n <= 5000
-    0 <= Node.val <= 1000
-
- 
-Follow-up: Can you solve the problem in O(1) extra memory space?
 
  * HERE ALSO WE TAKE THREE POINTER PRE CURR NEXT
  * FIRST OF ALL WE CHECK THAT IF HEAD==NULL OR K==1 IF YES
@@ -1137,9 +835,8 @@ Follow-up: Can you solve the problem in O(1) extra memory space?
  * AND DECREMENT THE TOTAL NUMBER OF NODE BY K
  * WHILE LOOP ENDS
  * AT LAST RETURN DUMMY.NEXT I.E ORIGINAL HEAD OF LINKEDLIST
+ 
 
-*/
-	
  public ListNode reverseKGroup(ListNode head, int k) 
     {
         if(head==null || k==1)
@@ -1185,13 +882,14 @@ Follow-up: Can you solve the problem in O(1) extra memory space?
         
         return count;
     }
+ 
 
 	
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
-//	25. Reverse Alternate Nodes in k-Group
-
+	25. Reverse Alternate Nodes in k-Group
+	
 
   public ListNode reverseKGroup(ListNode head, int k) 
     {
@@ -1251,35 +949,33 @@ Follow-up: Can you solve the problem in O(1) extra memory space?
     }
 	
 	
+	 ********************************************************************************************************************************
+
+	2. Add Two Numbers 
+
+	You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse 
+	order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 	
-//	 ********************************************************************************************************************************
-
-//	2. Add Two Numbers
-/* 
-
-You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse 
-order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
-
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-
-Example 1:
-Input: l1 = [2,4,3], l2 = [5,6,4]
-Output: [7,0,8]
-Explanation: 342 + 465 = 807.
-
-Example 2:
-Input: l1 = [0], l2 = [0]
-Output: [0]
-
-Example 3:
-Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
-Output: [8,9,9,9,0,0,0,1]
- 
-Constraints:
-
-The number of nodes in each linked list is in the range [1, 100].
-0 <= Node.val <= 9
-It is guaranteed that the list represents a number that does not have leading zeros.
+	You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+	
+	Example 1:
+	Input: l1 = [2,4,3], l2 = [5,6,4]
+	Output: [7,0,8]
+	Explanation: 342 + 465 = 807.
+	
+	Example 2:
+	Input: l1 = [0], l2 = [0]
+	Output: [0]
+	
+	Example 3:
+	Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+	Output: [8,9,9,9,0,0,0,1]
+	 
+	Constraints:
+	
+	The number of nodes in each linked list is in the range [1, 100].
+	0 <= Node.val <= 9
+	It is guaranteed that the list represents a number that does not have leading zeros.
  
  
  * Notes --
@@ -1312,8 +1008,7 @@ It is guaranteed that the list represents a number that does not have leading ze
  * Now move curr1 and curr2 to next pointer but check if curr1 and curr2 is equal to
  * null or not if null then assign nul to curr1 or curr2 respectively.
  
-*/
-	  
+  
 	class Solution {
 	    public ListNode addTwoNumbers(ListNode l1, ListNode l2) 
 	    {
@@ -1344,40 +1039,39 @@ It is guaranteed that the list represents a number that does not have leading ze
 	        return dummyNode.next;
 	    }
 	}
-	
 
 	
-//	 ********************************************************************************************************************************
-
-//	445. Add Two Numbers II
 	
-/*
+	 ********************************************************************************************************************************
 
-You are given two non-empty linked lists representing two non-negative integers. 
-The most significant digit comes first and each of their nodes contains a single
-digit. Add the two numbers and return the sum as a linked list.
-
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-
-Example 1:
-Input: l1 = [7,2,4,3], l2 = [5,6,4]
-Output: [7,8,0,7]
-
-Example 2:
-Input: l1 = [2,4,3], l2 = [5,6,4]
-Output: [8,0,7]
-
-Example 3:
-Input: l1 = [0], l2 = [0]
-Output: [0]
+	445. Add Two Numbers II
+	
+	
+	You are given two non-empty linked lists representing two non-negative integers. 
+	The most significant digit comes first and each of their nodes contains a single
+	digit. Add the two numbers and return the sum as a linked list.
+	
+	You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+	
+	Example 1:
+	Input: l1 = [7,2,4,3], l2 = [5,6,4]
+	Output: [7,8,0,7]
+	
+	Example 2:
+	Input: l1 = [2,4,3], l2 = [5,6,4]
+	Output: [8,0,7]
+	
+	Example 3:
+	Input: l1 = [0], l2 = [0]
+	Output: [0]
+	 
+	Constraints:
+	
+	The number of nodes in each linked list is in the range [1, 100].
+	0 <= Node.val <= 9
+	It is guaranteed that the list represents a number that does not have leading zeros.
  
-Constraints:
-
-The number of nodes in each linked list is in the range [1, 100].
-0 <= Node.val <= 9
-It is guaranteed that the list represents a number that does not have leading zeros.
  
- /*
   * Notes --
   * 
   * In this question we use stack of integers.
@@ -1399,8 +1093,6 @@ It is guaranteed that the list represents a number that does not have leading ze
   * If by chance carry is not equal to zero or greater than 0 then add carry to new Listnode
   * and write temp.next = result and result = temp;
 
-*/
-	
 	class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) 
     {
@@ -1468,26 +1160,26 @@ It is guaranteed that the list represents a number that does not have leading ze
  
 	
 	
-//	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 
-//	61. Rotate List
+	61. Rotate List
 	
-/*
 
-Given the head of a linked list, rotate the list to the right by k places.
 
-Example 1:
-Input: head = [1,2,3,4,5], k = 2
-Output: [4,5,1,2,3]
- 
-Example 2:
-Input: head = [0,1,2], k = 4
-Output: [2,0,1]
- 
-Constraints:
-The number of nodes in the list is in the range [0, 500].
--100 <= Node.val <= 100
-0 <= k <= 2 * 109
+	Given the head of a linked list, rotate the list to the right by k places.
+	
+	Example 1:
+	Input: head = [1,2,3,4,5], k = 2
+	Output: [4,5,1,2,3]
+	 
+	Example 2:
+	Input: head = [0,1,2], k = 4
+	Output: [2,0,1]
+	 
+	Constraints:
+	The number of nodes in the list is in the range [0, 500].
+	-100 <= Node.val <= 100
+	0 <= k <= 2 * 109
 
 
  * Notes --
@@ -1510,8 +1202,7 @@ The number of nodes in the list is in the range [0, 500].
  * 
  * then return dummy.next
 
-*/
-	
+
  class Solution {
     public ListNode rotateRight(ListNode head, int k) 
     {
@@ -1548,30 +1239,29 @@ The number of nodes in the list is in the range [0, 500].
     }   
 }
  
-
 	
-//	 ********************************************************************************************************************************
-
-//	86. Partition List
 	
-/*
+	 ********************************************************************************************************************************
 
-Given the head of a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
+	86. Partition List
+	
 
-You should preserve the original relative order of the nodes in each of the two partitions.
-
-Example 1:
-Input: head = [1,4,3,2,5,2], x = 3
-Output: [1,2,2,4,3,5]
-
-Example 2:
-Input: head = [2,1], x = 2
-Output: [1,2]
- 
-Constraints:
-The number of nodes in the list is in the range [0, 200].
--100 <= Node.val <= 100
--200 <= x <= 200 
+	Given the head of a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
+	
+	You should preserve the original relative order of the nodes in each of the two partitions.
+	
+	Example 1:
+	Input: head = [1,4,3,2,5,2], x = 3
+	Output: [1,2,2,4,3,5]
+	
+	Example 2:
+	Input: head = [2,1], x = 2
+	Output: [1,2]
+	 
+	Constraints:
+	The number of nodes in the list is in the range [0, 200].
+	-100 <= Node.val <= 100
+	-200 <= x <= 200 
  
 
   * Notes --
@@ -1591,8 +1281,7 @@ The number of nodes in the list is in the range [0, 200].
   *  
   * At last we will return left.next
 
-*/
-		
+	
 	class Solution {
     public ListNode partition(ListNode head, int x) 
     {
@@ -1627,19 +1316,409 @@ The number of nodes in the list is in the range [0, 200].
 
 	
 	
-//	 ********************************************************************************************************************************
+	
+	 ********************************************************************************************************************************
+
+	
+	203. Remove Linked List Elements
+
+
+	Given the head of a linked list and an integer val, remove all the nodes of the linked list that has Node.val == val, and return the new head.
+	
+	Example 1:
+	Input: head = [1,2,6,3,4,5,6], val = 6
+	Output: [1,2,3,4,5]
+	
+	Example 2:
+	Input: head = [], val = 1
+	Output: []
+	
+	Example 3:
+	Input: head = [7,7,7,7], val = 7
+	Output: []
+	 
+	Constraints:
+	The number of nodes in the list is in the range [0, 104].
+	1 <= Node.val <= 50
+	0 <= val <= 50
+ 
+ 
+ 
+  * Notes --
+  * 
+  * Approach 1 : Iterative
+  * 
+  * This question is so easy but i was thinking in a wrong way
+  * 
+  * In this question we have to take a dummy node whose next points to head
+  * 
+  * Initialize a new node as curr which points to dummy
+  * 
+  * Run a while until curr.next != null
+  * Inside it 
+  * if curr.val is same as val then : make curr.next = curr.next.next
+  * else make curr = curr.next
+  * 
+  * At last return dummy.next
+  * 
+  * 
+  * Approach 2 : Recursion
+  * 
+  * Simple Base case is if there is no node i.e linkedlist is empty then just return head or null
+  * else Recursion call
+  * head.next = function(head.next , val)
+  * 
+  *  if(head.val == val) return head.next else return head;
+
+
+	
+	ITERATIVE SOLUTION
+	
+	class Solution {
+	    public ListNode removeElements(ListNode head, int val) 
+	    {
+	       
+	        ListNode dummy = new ListNode(0);
+	        dummy.next = head;
+	        ListNode curr = dummy;
+	        
+	        while(curr.next != null)
+	        {
+	            if(curr.next.val == val)
+	            {
+	                curr.next = curr.next.next;
+	            }
+	            else
+	            {
+	                curr = curr.next;
+	            }
+	        }
+	        
+	        return dummy.next;
+	        
+	    }
+	}
+	
+	RECURSIVE SOLUTION
+	
+	class Solution 
+	{
+	    public ListNode removeElements(ListNode head, int val) 
+	    {
+	       if(head == null)
+	       {
+	           return head;
+	       }
+	        
+	        head.next = removeElements(head.next , val);
+	        
+	        return head.val == val ? head.next : head;      
+	    }
+	}
+
+	
 
 	
 	
+	 ********************************************************************************************************************************
+
+	237. Delete Node in a Linked List
+	
+	There is a singly-linked list head and we want to delete a node node in it.
+
+	You are given the node to be deleted node. You will not be given access to the first node of head.
+	
+	All the values of the linked list are unique, and it is guaranteed that the given node node is not the last node in the linked list.
+	
+	Delete the given node. Note that by deleting the node, we do not mean removing it from memory. We mean:
+	
+	The value of the given node should not exist in the linked list.
+	The number of nodes in the linked list should decrease by one.
+	All the values before node should be in the same order.
+	All the values after node should be in the same order.
+	Custom testing:
+	
+	For the input, you should provide the entire linked list head and the node to be given node. node should not be the last node of the 
+	list and should be an actual node in the list.
+	We will build the linked list and pass the node to your function.
+	The output will be the entire list after calling your function.
+	 
+	
+	Example 1:
+	Input: head = [4,5,1,9], node = 5
+	Output: [4,1,9]
+	Explanation: You are given the second node with value 5, the linked list should become 4 -> 1 -> 9 after calling your function.
+	
+	Example 2:
+	Input: head = [4,5,1,9], node = 1
+	Output: [4,5,9]
+	Explanation: You are given the third node with value 1, the linked list should become 4 -> 5 -> 9 after calling your function.
+	 
+	
+	Constraints:
+	The number of the nodes in the given list is in the range [2, 1000].
+	-1000 <= Node.val <= 1000
+	The value of each node in the list is unique.
+	The node to be deleted is in the list and is not a tail node.
 	
 	
+	 * Notes --
+	 * 
+	 * This Question was so simple and i was thinking that it is a very hard problem by seeing its difficulty level
+	 * Leetcode sometimes makes you fool by giving easy question as a medium level question in difficulty
+	 * 
+	 * So never go on difficulty level and solve question apply your own brain to solve it.
+	 * 
+	 * So in this question we have to delete the given node from a link list
+	 * 
+	 * For this simply apply if operator with condition node is not equal to null and node.next not equal to null
+	 * Inside if :
+	 * Change node.val = node.next.val
+	 * change node = node.next.next
+	 * 
+	 
+	 
+	class Solution 
+	{
+	    public void deleteNode(ListNode node) 
+	    {
+	         if(node != null && node.next != null) 
+	         {
+	                node.val = node.next.val;
+	                node.next = node.next.next;
+	         }
+	    }  
+    }
+    
+    
+    
+    	 ********************************************************************************************************************************
+	 
+
+    2095. Delete the Middle Node of a Linked List
+    
+    You are given the head of a linked list. Delete the middle node, and return the head of the modified linked list.
+	The middle node of a linked list of size n is the ⌊n / 2⌋th node from the start using 0-based indexing, where ⌊x⌋ 
+	denotes the largest integer less than or equal to x.
+	
+	For n = 1, 2, 3, 4, and 5, the middle nodes are 0, 1, 1, 2, and 2, respectively.
+	 	
+	Example 1:	
+	Input: head = [1,3,4,7,1,2,6]
+	Output: [1,3,4,1,2,6]
+	Explanation:
+	The above figure represents the given linked list. The indices of the nodes are written below.
+	Since n = 7, node 3 with value 7 is the middle node, which is marked in red.
+	We return the new list after removing this node. 
+	
+	Example 2:
+	Input: head = [1,2,3,4]
+	Output: [1,2,4]
+	Explanation:
+	The above figure represents the given linked list.
+	For n = 4, node 2 with value 3 is the middle node, which is marked in red.
+	
+	Example 3:
+	Input: head = [2,1]
+	Output: [2]
+	Explanation:
+	The above figure represents the given linked list.
+	For n = 2, node 1 with value 1 is the middle node, which is marked in red.
+	Node 0 with value 2 is the only node remaining after removing node 1.
+	 	
+	Constraints:	
+	The number of nodes in the list is in the range [1, 105].
+	1 <= Node.val <= 105
+    
+     * 
+     * Notes --
+     * 
+     * This is also another simple question like delete the given node question
+     * 
+     * In this question we have delete the middle node of link list and return head.
+     * 
+     * So first we will find the mid node
+     * 
+     * Then just apply logic to delete the given node problem
+     * To delete the node just apply if operator
+     * Inside if :
+     * change mid.val = mid.next.val
+     * change mod.next = mid.next.next
+     * 
+     *  That's It !!
+     *
+
+	class Solution {
+    public ListNode deleteMiddle(ListNode head) 
+    {
+        ListNode midN = mid(head);
+        
+        if(midN.next == null)
+        {
+            if(head.next == null)
+            {
+                return null;
+            }
+            
+            head.next = null;
+            return head;
+        }
+        
+        if(midN != null && midN.next != null)
+        {
+            midN.val = midN.next.val;
+            midN.next = midN.next.next;
+        }
+        
+        return head;
+    }
+    
+    private ListNode mid(ListNode head)
+    {
+        ListNode slow = head;
+        ListNode fast = head;
+        
+        while(fast != null && fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        
+        return slow;
+    }    
+}
+    
 	
 	
+	    	 ********************************************************************************************************************************
+	    	 
+    725. Split Linked List in Parts
+     
+    Given the head of a singly linked list and an integer k, split the linked list
+    into k consecutive linked list parts.
+	The length of each part should be as equal as possible: no two parts should have
+	 a size differing by more than one. 
+	This may lead to some parts being null.
+	
+	The parts should be in the order of occurrence in the input list, and parts occurring
+	earlier should always have a size greater than or equal to parts occurring later.
+	
+	Return an array of the k parts.
+	
+	Example 1:
+	Input: head = [1,2,3], k = 5
+	Output: [[1],[2],[3],[],[]]
+	Explanation:
+	The first element output[0] has output[0].val = 1, output[0].next = null.
+	The last element output[4] is null, but its string representation as a ListNode is [].
+	
+	Example 2:
+	Input: head = [1,2,3,4,5,6,7,8,9,10], k = 3
+	Output: [[1,2,3,4],[5,6,7],[8,9,10]]
+	Explanation:
+	The input has been split into consecutive parts with size difference at most 1, and earlier parts are a larger size than the later parts.
+	 	
+	Constraints:	
+	The number of nodes in the list is in the range [0, 1000].
+	0 <= Node.val <= 1000
+	1 <= k <= 50
 	
 	
+	 * 
+	 * Notes --
+	 * 
+	 * This question was easy by logic but implementation was hard but cracked it 
+	 * from discussion section ha ha ha ..
+	 * 
+	 * So to solve this we need to create a array of link list which has size of k 
+	 * 
+	 * If link list is empty then return empty array else
+	 * 
+	 * Find the length of link list
+	 * 
+	 * Find the number of indices which will never have empty link list
+	 * To find this n = length / k
+	 * 
+	 * Now find the first r number of indices in which link list have extra r nodes
+	 * To find this r = length % k
+	 * 
+	 * Now apply for Loop inside it another for Loop
+	 * And description about for loop is given in the code section in the comments .
+	 * 
+	 * That's it !!
+	 * 
+
+	class Solution 
+{
+    public ListNode[] splitListToParts(ListNode head, int k) 
+    {
+        // We want array of link list of size k means array 
+        // will have k link list inside it .
+        ListNode res[] = new ListNode[k];
+        
+        // If LinkedList is Empty then :
+        if(head == null)
+        {
+            return res;
+        }
+        
+        int length = 0;
+        
+        ListNode temp = head;
+        
+        // To find the length
+        while(temp != null)
+        {
+            length++;
+            temp = temp.next;
+        }
+        
+        // To find Minimum Number of Elements in each part
+        int n = length / k; 
+        
+        // To find r Number of LinkList from first which have extra r nodes
+        int r = length % k;
+        
+        // pre will denote last node of each link list 
+        ListNode pre = null;
+        
+        // curr will denote first node of each link list
+        ListNode curr = head;
+        
+        // First for loop for number of link list in array i.e size of our link list array 
+        // which we have to return at last.
+        for(int i=0 ; i < k && curr != null ; i++)
+        {
+            res[i] = curr;
+            
+            // This loop is for how many nodes are there in each link list 
+            for(int j=0 ; j < n + (r > 0 ? 1 : 0) ; j++)
+            {
+                pre = curr;
+                curr = curr.next;
+            }
+            
+            // This denote the last node of link list for index i of link list array
+            pre.next = null;
+            
+            // This is for number of index at which link list will have extra one element
+            // and we have to decrement
+            r--;
+        }
+        
+        return res;       
+    }
+}
+
+
+	    	 ********************************************************************************************************************************
+
+	
+
+
 	
 	
-	
+*/
 
 	
 	private class Node
