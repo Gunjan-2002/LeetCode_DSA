@@ -182,7 +182,7 @@ public class LL
 	}
 	
 	
-/*	 ********************************************************************************************************************************
+	 ********************************************************************************************************************************
 	
 	83. Remove Duplicates from Sorted List
 	
@@ -248,7 +248,7 @@ public class LL
 	
 	 ********************************************************************************************************************************
 
-//	 141. Linked List Cycle
+	 141. Linked List Cycle
 	
 
 	    Note :
@@ -1438,8 +1438,8 @@ public class LL
 	All the values after node should be in the same order.
 	Custom testing:
 	
-	For the input, you should provide the entire linked list head and the node to be given node. node should not be the last node of the 
-	list and should be an actual node in the list.
+	For the input, you should provide the entire linked list head and the node to be given node. node should not be the last node of the list
+	and should be an actual node in the list.
 	We will build the linked list and pass the node to your function.
 	The output will be the entire list after calling your function.
 	 
@@ -1493,11 +1493,10 @@ public class LL
     
     
     	 ********************************************************************************************************************************
-	 
 
-    2095. Delete the Middle Node of a Linked List
+        2095. Delete the Middle Node of a Linked List
     
-    You are given the head of a linked list. Delete the middle node, and return the head of the modified linked list.
+        You are given the head of a linked list. Delete the middle node, and return the head of the modified linked list.
 	The middle node of a linked list of size n is the ⌊n / 2⌋th node from the start using 0-based indexing, where ⌊x⌋ 
 	denotes the largest integer less than or equal to x.
 	
@@ -1713,12 +1712,92 @@ public class LL
 
 	    	 ********************************************************************************************************************************
 
+	19. Remove Nth Node From End of List
 	
+	Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+	Example 1:
+	Input: head = [1,2,3,4,5], n = 2
+	Output: [1,2,3,5]
+	
+	Example 2:
+	Input: head = [1], n = 1
+	Output: []
+	
+	Example 3:
+	Input: head = [1,2], n = 1
+	Output: [1]
+	 
+	Constraints:
+	The number of nodes in the list is sz.
+	1 <= sz <= 30
+	0 <= Node.val <= 100
+	1 <= n <= sz
+	 
+	Follow up: Could you do this in one pass?
+	
+	
+	class Solution 
+	{
+	    public ListNode removeNthFromEnd(ListNode head, int n) 
+	    {
+	        ListNode temp=head;
+	        int size =0;
+	        
+	        while(temp != null)
+	        {
+	            size ++;
+	            temp = temp.next;
+	        }
+	        
+	        ListNode dummy = head;
+	        
+	        int len = size - n;
+	        
+	        if(size == n )
+	        {
+	            return head.next;
+	        }
+	        
+	        for(int j=0 ; j< len -1 ; j++)
+	        {
+	            dummy = dummy.next;
+	        }
+	        
+	        dummy.next = dummy.next.next;       
+	        return head;
+	    }
+    }
 
 
+	class Solution 
+	{
+	    public ListNode removeNthFromEnd(ListNode head, int n) 
+	    {
+	       ListNode newHead = new ListNode(0);
+	       newHead.next = head;
+	       ListNode p = newHead;
+	       ListNode runner = newHead;
+	       while(n>0){
+	           runner = runner.next;
+	           n--;
+	       }
+	       while(runner.next!=null){
+	           runner = runner.next;
+	           p=p.next;
+	       }
+	       p.next = p.next.next;
+	       return newHead.next;
+	    }
+    }
+	   
+
+
+	    	 ********************************************************************************************************************************
+
 	
 	
-*/
+
 
 	
 	private class Node
